@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Oficina Conecta Santo Ângelo — slides</title>
+<meta name="description" content="Slides da oficina de inclusão digital: estudar de graça, serviços públicos, exercitar a mente e navegar com segurança.">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #10171e; --surface: #1c2732; --border: #35434f;
+  --text: #f2f6f9; --text-soft: #a8b8c6;
+  --estudo: #5cc9a3; --governo: #7ab4e8; --mente: #c39ae0; --seguranca: #f0906c;
+  --accent: var(--governo);
+}
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  overflow: hidden;
+}
+:focus-visible { outline: 3px solid #ffb066; outline-offset: 4px; }
+
+.slide {
+  display: none; position: absolute; inset: 0;
+  padding: clamp(2rem, 6vw, 5rem);
+  padding-bottom: 8rem; /* espaço livre acima da barra fixa de navegação */
+  flex-direction: column;
+  max-width: 1100px; margin: 0 auto;
+  overflow-y: auto;
+}
+.slide[data-ativo] { display: flex; }
+
+/* Espaçadores que centralizam o slide quando há folga e encolhem a zero
+   quando não há — assim tela baixa rola normalmente em vez de cortar. */
+.slide::before, .slide::after { content: ""; flex: 1 1 0; min-height: 0; }
+
+.etiqueta {
+  margin: 0 0 1rem; font-size: clamp(0.75rem, 1.6vw, 0.9rem); font-weight: 700;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+}
+h1 { margin: 0 0 1.25rem; font-size: clamp(2rem, 6.5vw, 4rem); line-height: 1.08; letter-spacing: -0.03em; }
+h2 { margin: 0 0 1.5rem; font-size: clamp(1.6rem, 4.5vw, 2.8rem); line-height: 1.15; letter-spacing: -0.02em; }
+p.linha { margin: 0 0 1rem; font-size: clamp(1.05rem, 2.4vw, 1.5rem); color: var(--text-soft); max-width: 34ch; }
+
+ul.itens { list-style: none; margin: 0; padding: 0; display: grid; gap: 0.9rem; }
+ul.itens li {
+  display: flex; gap: 1rem; align-items: flex-start;
+  background: var(--surface); border: 2px solid var(--border);
+  border-left: 6px solid var(--accent); border-radius: 12px;
+  padding: 1rem 1.25rem; font-size: clamp(1rem, 2.1vw, 1.3rem);
+}
+ul.itens .n {
+  flex-shrink: 0; font-weight: 800; color: var(--accent);
+  font-size: clamp(1.1rem, 2.4vw, 1.5rem); min-width: 1.6em;
+}
+ul.itens strong { display: block; }
+ul.itens span.sub { color: var(--text-soft); font-size: 0.88em; }
+
+.pratica {
+  margin-top: 1.5rem; background: var(--surface);
+  border: 2px dashed var(--accent); border-radius: 12px;
+  padding: 1.1rem 1.35rem; font-size: clamp(1rem, 2.1vw, 1.25rem);
+}
+.pratica strong { color: var(--accent); display: block; margin-bottom: 0.25rem; }
+
+.quiz { display: grid; gap: 1rem; margin-top: 1rem; }
+.quiz .caso {
+  background: var(--surface); border: 2px solid var(--border);
+  border-radius: 12px; padding: 1.1rem 1.35rem;
+  font-size: clamp(1rem, 2.1vw, 1.3rem); font-style: italic;
+}
+
+.slide[data-cor="estudo"]    { --accent: var(--estudo); }
+.slide[data-cor="governo"]   { --accent: var(--governo); }
+.slide[data-cor="mente"]     { --accent: var(--mente); }
+.slide[data-cor="seguranca"] { --accent: var(--seguranca); }
+
+.barra {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 1rem; padding: 0.85rem 1.25rem;
+  background: rgba(16, 23, 30, 0.92); border-top: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+}
+.barra button {
+  min-height: 46px; min-width: 46px; padding: 0.5rem 1.1rem;
+  background: var(--surface); color: var(--text);
+  border: 2px solid var(--border); border-radius: 10px;
+  font: inherit; font-weight: 700; cursor: pointer;
+}
+.barra button:hover:not(:disabled) { border-color: var(--text-soft); }
+.barra button:disabled { opacity: 0.35; cursor: default; }
+.contador { color: var(--text-soft); font-variant-numeric: tabular-nums; font-size: 0.95rem; }
+
+@media print {
+  body { overflow: visible; background: #fff; color: #000; }
+  .slide { display: flex !important; position: static; break-after: page; min-height: 90vh; border-bottom: 1px solid #ccc; }
+  .barra { display: none; }
+  ul.itens li, .pratica, .quiz .caso { background: #f4f4f4; border-color: #666; }
+}
+</style>
+</head>
+<body>
+
+<main id="deck">
+
+  <section class="slide" data-ativo>
+    <p class="etiqueta">Oficina de inclusão digital · Santo Ângelo — RS</p>
+    <h1>A internet que ajuda no seu dia a dia</h1>
+    <p class="linha">
+      Duas horas, seu próprio celular, nada para pagar. No final você leva uma
+      cartilha impressa para casa.
+    </p>
+  </section>
+
+  <section class="slide">
+    <p class="etiqueta">Antes de começar</p>
+    <h2>Quem está falando aqui</h2>
+    <ul class="itens">
+      <li><span class="n">→</span><div><strong>Jackson Ramos</strong><span class="sub">Estudante de Análise e Desenvolvimento de Sistemas</span></div></li>
+      <li><span class="n">→</span><div><strong>Por que esta oficina existe</strong><span class="sub">Projeto de extensão da faculdade, aplicado aqui na comunidade</span></div></li>
+      <li><span class="n">→</span><div><strong>O combinado</strong><span class="sub">Pergunte na hora que a dúvida aparecer. Ninguém aqui vai julgar ninguém.</span></div></li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <p class="etiqueta">Roteiro</p>
+    <h2>O que vamos ver hoje</h2>
+    <ul class="itens">
+      <li><span class="n">1</span><div><strong>Estudar de graça</strong><span class="sub">Aula de escola e curso técnico sem pagar nada</span></div></li>
+      <li><span class="n">2</span><div><strong>Resolver com o governo</strong><span class="sub">Sem fila, sem sair de casa</span></div></li>
+      <li><span class="n">3</span><div><strong>Exercitar a mente</strong><span class="sub">Aprender jogando, poucos minutos por dia</span></div></li>
+      <li><span class="n">4</span><div><strong>Navegar com segurança</strong><span class="sub">Reconhecer golpe antes de cair nele</span></div></li>
+    </ul>
+  </section>
+
+  <!-- BLOCO 1 -->
+  <section class="slide" data-cor="estudo">
+    <p class="etiqueta">Bloco 1</p>
+    <h2>📚 Estudar de graça</h2>
+    <ul class="itens">
+      <li><span class="n">→</span><div><strong>Khan Academy</strong><span class="sub">Matemática, português, física — aulas curtas com exercício depois</span></div></li>
+      <li><span class="n">→</span><div><strong>Coursera</strong><span class="sub">Cursos de universidades; assistir é grátis, só o certificado é pago</span></div></li>
+      <li><span class="n">→</span><div><strong>YouTube</strong><span class="sub">Procure o assunto + a palavra "aula"</span></div></li>
+    </ul>
+    <div class="pratica">
+      <strong>Agora com você</strong>
+      Abra a Khan Academy no celular e encontre uma aula de porcentagem.
+    </div>
+  </section>
+
+  <!-- BLOCO 2 -->
+  <section class="slide" data-cor="governo">
+    <p class="etiqueta">Bloco 2</p>
+    <h2>🏛️ Resolver com o governo</h2>
+    <ul class="itens">
+      <li><span class="n">→</span><div><strong>Gov.br</strong><span class="sub">Uma senha só: INSS, CadÚnico, CNH, Carteira de Trabalho</span></div></li>
+      <li><span class="n">→</span><div><strong>Meu SUS Digital</strong><span class="sub">Vacinas, exames e histórico de atendimento no celular</span></div></li>
+      <li><span class="n">→</span><div><strong>Receita Federal</strong><span class="sub">Situação do CPF e Imposto de Renda</span></div></li>
+    </ul>
+    <div class="pratica">
+      <strong>Agora com você</strong>
+      Entre no Gov.br e confira a situação do seu CPF. Quem ainda não tem conta, criamos juntos.
+    </div>
+  </section>
+
+  <!-- BLOCO 3 -->
+  <section class="slide" data-cor="mente">
+    <p class="etiqueta">Bloco 3</p>
+    <h2>🧠 Exercitar a mente</h2>
+    <ul class="itens">
+      <li><span class="n">→</span><div><strong>Duolingo</strong><span class="sub">Inglês e espanhol em lições de cinco minutos</span></div></li>
+      <li><span class="n">→</span><div><strong>Racha Cuca</strong><span class="sub">Cruzadas, sudoku e lógica — em português, sem cadastro</span></div></li>
+      <li><span class="n">→</span><div><strong>Lumosity</strong><span class="sub">Treino diário de memória e atenção</span></div></li>
+    </ul>
+    <div class="pratica">
+      <strong>Agora com você</strong>
+      Faça a primeira lição do Duolingo. Leva três minutos.
+    </div>
+  </section>
+
+  <!-- BLOCO 4 -->
+  <section class="slide" data-cor="seguranca">
+    <p class="etiqueta">Bloco 4</p>
+    <h2>🛡️ As cinco regras</h2>
+    <ul class="itens">
+      <li><span class="n">1</span><div><strong>Site do governo termina em .gov.br</strong></div></li>
+      <li><span class="n">2</span><div><strong>Serviço público não cobra taxa por WhatsApp</strong></div></li>
+      <li><span class="n">3</span><div><strong>Código do SMS é só seu — nunca repasse</strong></div></li>
+      <li><span class="n">4</span><div><strong>Pressa é a marca do golpe</strong></div></li>
+      <li><span class="n">5</span><div><strong>Parente de número novo? Ligue no antigo</strong></div></li>
+    </ul>
+  </section>
+
+  <section class="slide" data-cor="seguranca">
+    <p class="etiqueta">Bloco 4 · dinâmica</p>
+    <h2>É golpe ou não é?</h2>
+    <div class="quiz">
+      <div class="caso">“Sua encomenda está retida. Pague R$ 4,90 de taxa alfandegária neste link.”</div>
+      <div class="caso">“Oi mãe, esse é meu número novo, troquei de chip.”</div>
+      <div class="caso">Você digitou gov.br e apareceu a tela de login com cadeado.</div>
+    </div>
+    <div class="pratica">
+      <strong>Como jogar</strong>
+      Todo mundo levanta a mão para "é golpe". Depois discutimos o porquê de cada um.
+    </div>
+  </section>
+
+  <section class="slide">
+    <p class="etiqueta">Para levar para casa</p>
+    <h2>Tudo isso fica salvo</h2>
+    <ul class="itens">
+      <li><span class="n">→</span><div><strong>O portal</strong><span class="sub">Todos os links organizados, funciona no celular</span></div></li>
+      <li><span class="n">→</span><div><strong>A cartilha impressa</strong><span class="sub">Os golpes, as senhas e o que fazer se cair em um</span></div></li>
+      <li><span class="n">→</span><div><strong>Salve nos favoritos</strong><span class="sub">Vamos fazer isso juntos agora, antes de encerrar</span></div></li>
+    </ul>
+  </section>
+
+  <section class="slide">
+    <h1>Obrigado 👋</h1>
+    <p class="linha">
+      Se alguma coisa aqui te ajudar em casa, mostre para mais alguém.
+      É assim que o projeto continua.
+    </p>
+  </section>
+
+</main>
+
+<nav class="barra" aria-label="Navegação dos slides">
+  <button type="button" id="anterior" aria-label="Slide anterior">← Anterior</button>
+  <span class="contador" id="contador" aria-live="polite"></span>
+  <button type="button" id="proximo" aria-label="Próximo slide">Próximo →</button>
+</nav>
+
+<script>
+(function () {
+  var slides = Array.prototype.slice.call(document.querySelectorAll('.slide'));
+  var anterior = document.getElementById('anterior');
+  var proximo = document.getElementById('proximo');
+  var contador = document.getElementById('contador');
+  var atual = 0;
+
+  function mostrar(i) {
+    atual = Math.max(0, Math.min(slides.length - 1, i));
+    slides.forEach(function (s, n) {
+      if (n === atual) { s.setAttribute('data-ativo', ''); }
+      else { s.removeAttribute('data-ativo'); }
+    });
+    contador.textContent = (atual + 1) + ' / ' + slides.length;
+    anterior.disabled = atual === 0;
+    proximo.disabled = atual === slides.length - 1;
+    location.hash = 'slide-' + (atual + 1);
+  }
+
+  anterior.addEventListener('click', function () { mostrar(atual - 1); });
+  proximo.addEventListener('click', function () { mostrar(atual + 1); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') { mostrar(atual + 1); e.preventDefault(); }
+    else if (e.key === 'ArrowLeft' || e.key === 'PageUp') { mostrar(atual - 1); e.preventDefault(); }
+    else if (e.key === 'Home') { mostrar(0); e.preventDefault(); }
+    else if (e.key === 'End') { mostrar(slides.length - 1); e.preventDefault(); }
+  });
+
+  function daHash() {
+    var n = parseInt((location.hash.match(/slide-(\d+)/) || [])[1], 10);
+    return isNaN(n) ? 0 : n - 1;
+  }
+
+  // Mantém voltar/avançar do navegador em sincronia com o slide exibido.
+  window.addEventListener('hashchange', function () {
+    var alvo = daHash();
+    if (alvo !== atual) { mostrar(alvo); }
+  });
+
+  mostrar(daHash());
+})();
+</script>
+
+</body>
+</html>

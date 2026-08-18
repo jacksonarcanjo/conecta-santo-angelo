@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cartilha de Navegação Segura — Conecta Santo Ângelo</title>
+<meta name="description" content="Cartilha impressa sobre golpes na internet, senhas seguras e o que fazer se você caiu em um golpe.">
+<style>
+:root {
+  color-scheme: light dark;
+  --bg: #f4f6f8;
+  --surface: #ffffff;
+  --border: #ccd5de;
+  --text: #14202b;
+  --text-soft: #4a5b6a;
+  --accent: #a33512;
+  --accent-soft: #fae2da;
+  --ok: #0a6b4f;
+  --ok-soft: #d9efe6;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #10171e; --surface: #19222c; --border: #35434f;
+    --text: #eef3f7; --text-soft: #a8b8c6;
+    --accent: #f0906c; --accent-soft: #3a1d13;
+    --ok: #5cc9a3; --ok-soft: #14332a;
+  }
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0; background: var(--bg); color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 17px; line-height: 1.6;
+}
+:focus-visible { outline: 3px solid #b3540a; outline-offset: 3px; }
+
+.folha {
+  max-width: 820px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem;
+}
+
+.capa { border-bottom: 4px solid var(--accent); padding-bottom: 1.5rem; margin-bottom: 2.5rem; }
+.capa .etiqueta {
+  margin: 0 0 0.5rem; font-size: 0.85rem; font-weight: 700;
+  letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent);
+}
+.capa h1 { margin: 0 0 0.6rem; font-size: clamp(1.8rem, 5vw, 2.5rem); line-height: 1.15; letter-spacing: -0.02em; }
+.capa p { margin: 0; color: var(--text-soft); max-width: 55ch; }
+
+.acoes { margin: 0 0 2.5rem; }
+.imprimir {
+  display: inline-flex; align-items: center; gap: 0.5rem; min-height: 50px;
+  padding: 0.7rem 1.4rem; background: var(--accent); color: #fff;
+  border: none; border-radius: 10px; font: inherit; font-weight: 700;
+  font-size: 1rem; cursor: pointer;
+}
+@media (prefers-color-scheme: dark) { .imprimir { color: #10171e; } }
+.imprimir:hover { filter: brightness(1.12); }
+
+h2 {
+  margin: 2.75rem 0 1.1rem; font-size: 1.5rem; line-height: 1.25;
+  border-left: 6px solid var(--accent); padding-left: 0.9rem;
+}
+h3 { margin: 0 0 0.35rem; font-size: 1.15rem; }
+
+.golpe {
+  background: var(--surface); border: 2px solid var(--border);
+  border-radius: 12px; padding: 1.25rem 1.4rem; margin-bottom: 1rem;
+}
+.golpe .fala {
+  display: block; margin: 0 0 0.75rem; padding: 0.7rem 1rem;
+  background: var(--accent-soft); border-radius: 8px;
+  font-style: italic; color: var(--text);
+}
+.golpe .verdade { margin: 0; }
+.golpe .verdade strong { color: var(--accent); }
+
+ol.passos { padding-left: 1.4rem; margin: 0 0 1rem; }
+ol.passos li { margin-bottom: 0.7rem; }
+
+.senha {
+  background: var(--ok-soft); border: 2px solid var(--ok);
+  border-radius: 12px; padding: 1.25rem 1.4rem; margin: 1.25rem 0;
+}
+.senha p { margin: 0 0 0.6rem; }
+.senha .exemplo {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size: 1.25rem; font-weight: 700; letter-spacing: 0.02em;
+  display: block; margin: 0.6rem 0; color: var(--ok);
+}
+
+table { width: 100%; border-collapse: collapse; margin: 1rem 0 1.5rem; }
+caption { text-align: left; color: var(--text-soft); padding-bottom: 0.5rem; }
+th, td { text-align: left; padding: 0.75rem 0.9rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+th { background: var(--surface); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 0.06em; }
+
+.rodape {
+  margin-top: 3rem; padding-top: 1.5rem; border-top: 2px solid var(--border);
+  color: var(--text-soft); font-size: 0.9rem;
+}
+.rodape a { color: var(--accent); }
+.voltar { display: inline-block; margin-bottom: 1.5rem; color: var(--accent); font-weight: 600; }
+
+@media print {
+  @page { size: A4; margin: 15mm; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .acoes, .voltar { display: none; }
+  .golpe, .senha, table { break-inside: avoid; }
+  h2 { break-after: avoid; }
+  .capa { border-bottom-color: #000; }
+  .golpe .fala { background: #f0f0f0; }
+  .senha { background: #f4f4f4; border-color: #000; }
+  a[href^="http"]::after { content: " (" attr(href) ")"; font-size: 9pt; color: #444; }
+}
+</style>
+</head>
+<body>
+
+<div class="folha">
+
+  <a class="voltar" href="../">← Voltar ao portal</a>
+
+  <header class="capa">
+    <p class="etiqueta">Conecta Santo Ângelo · Cartilha 01</p>
+    <h1>Navegar com segurança</h1>
+    <p>
+      Os golpes mais usados hoje, como reconhecer cada um em segundos e o que
+      fazer se você já caiu. Feito para levar impresso para casa.
+    </p>
+  </header>
+
+  <div class="acoes">
+    <button type="button" class="imprimir" onclick="window.print()">🖨️ Imprimir esta cartilha</button>
+  </div>
+
+  <h2>1. Os golpes mais comuns</h2>
+
+  <div class="golpe">
+    <h3>O parente com número novo</h3>
+    <span class="fala">“Oi mãe, troquei de celular. Meu número novo é esse. Preciso que você faça um PIX urgente.”</span>
+    <p class="verdade">
+      <strong>Como saber:</strong> a pressa e o número desconhecido. Golpistas usam
+      foto de perfil tirada das redes sociais para parecer legítimo.
+      <strong>O que fazer:</strong> ligue para o número antigo do seu parente antes de
+      pagar qualquer coisa. Se atender, era golpe.
+    </p>
+  </div>
+
+  <div class="golpe">
+    <h3>O benefício que precisa de taxa</h3>
+    <span class="fala">“Seu Bolsa Família foi liberado! Pague a taxa de desbloqueio de R$ 39,90 neste PIX.”</span>
+    <p class="verdade">
+      <strong>Como saber:</strong> benefício do governo <strong>nunca</strong> cobra taxa
+      para ser liberado. Nenhum, em nenhuma situação.
+      <strong>O que fazer:</strong> ignore e confira no aplicativo oficial Gov.br ou no
+      CRAS da sua região.
+    </p>
+  </div>
+
+  <div class="golpe">
+    <h3>A central do banco que liga para você</h3>
+    <span class="fala">“Detectamos uma compra suspeita no seu cartão. Vou transferir para o setor de segurança, confirme seu código.”</span>
+    <p class="verdade">
+      <strong>Como saber:</strong> o banco de verdade nunca pede senha, código do SMS
+      ou o número do cartão por telefone.
+      <strong>O que fazer:</strong> desligue e ligue você mesmo para o número que está
+      atrás do seu cartão. Nunca use o número que eles passaram.
+    </p>
+  </div>
+
+  <div class="golpe">
+    <h3>A vaga de emprego boa demais</h3>
+    <span class="fala">“Trabalhe de casa, 2 horas por dia, R$ 3.000 por semana. Só faça o cadastro pagando R$ 50.”</span>
+    <p class="verdade">
+      <strong>Como saber:</strong> emprego de verdade não cobra nada do candidato —
+      nem cadastro, nem exame, nem uniforme adiantado.
+      <strong>O que fazer:</strong> não pague. Procure vagas pelo aplicativo da Carteira
+      de Trabalho Digital, dentro do Gov.br.
+    </p>
+  </div>
+
+  <div class="golpe">
+    <h3>O link do prêmio</h3>
+    <span class="fala">“Você ganhou! Clique aqui para resgatar seu prêmio antes que expire.”</span>
+    <p class="verdade">
+      <strong>Como saber:</strong> você não participou de sorteio nenhum. O link leva a
+      uma página falsa que copia a aparência de um site conhecido.
+      <strong>O que fazer:</strong> apague a mensagem. Se ficou em dúvida, digite o
+      endereço do site oficial você mesmo, sem usar o link.
+    </p>
+  </div>
+
+  <h2>2. Como saber se o site é oficial</h2>
+
+  <table>
+    <caption>Confira o endereço antes de digitar qualquer dado.</caption>
+    <thead>
+      <tr><th scope="col">Confie</th><th scope="col">Desconfie</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Termina em <strong>.gov.br</strong></td>
+        <td>Termina em <strong>.com</strong>, <strong>.net</strong> ou <strong>.xyz</strong> se diz ser do governo</td>
+      </tr>
+      <tr>
+        <td>Nome escrito certo: <strong>gov.br</strong></td>
+        <td>Letras trocadas: <strong>g0v.br</strong>, <strong>gov-br.com</strong></td>
+      </tr>
+      <tr>
+        <td>Você digitou o endereço</td>
+        <td>Você chegou por link de SMS ou WhatsApp</td>
+      </tr>
+      <tr>
+        <td>Cadeado 🔒 na barra de endereço</td>
+        <td>Aviso de “site não seguro”</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    Atenção: o cadeado sozinho não garante que o site é honesto — ele só garante
+    que a conexão é protegida. Site de golpe também pode ter cadeado. O nome do
+    endereço é o que mais importa.
+  </p>
+
+  <h2>3. Uma senha que você lembra e ninguém adivinha</h2>
+
+  <p>
+    Senha boa não é senha complicada — é senha <strong>longa</strong>. Junte três
+    palavras que só fazem sentido para você e coloque um número no meio.
+  </p>
+
+  <div class="senha">
+    <p>Em vez de <strong>joao1985</strong>, use algo assim:</p>
+    <span class="exemplo">cavalo7janela-cafe</span>
+    <p>
+      Tem 18 caracteres, você decora em um dia e um computador levaria séculos
+      para descobrir.
+    </p>
+  </div>
+
+  <p><strong>Três regras que valem mais que qualquer outra coisa:</strong></p>
+  <ol class="passos">
+    <li>Nunca use a mesma senha do banco em outro site.</li>
+    <li>Não use nome, data de nascimento ou placa do carro.</li>
+    <li>Ative a verificação em duas etapas no WhatsApp e no Gov.br — é o que impede alguém de clonar sua conta.</li>
+  </ol>
+
+  <h2>4. Caí em um golpe. E agora?</h2>
+
+  <p>Aja rápido: nas primeiras horas ainda dá para recuperar dinheiro.</p>
+
+  <ol class="passos">
+    <li>
+      <strong>Avise o banco imediatamente</strong>, pelo aplicativo ou pelo número
+      atrás do cartão. Se foi PIX, peça o <strong>MED</strong> (Mecanismo Especial de
+      Devolução) — é um procedimento do Banco Central que pode devolver o valor.
+      Existe prazo, então não deixe para depois.
+    </li>
+    <li>
+      <strong>Troque suas senhas</strong>, começando pelo e-mail e pelo banco.
+    </li>
+    <li>
+      <strong>Registre boletim de ocorrência.</strong> No Rio Grande do Sul dá para
+      fazer pela internet, na Delegacia Online da Polícia Civil:
+      <a href="https://delegaciaonline.rs.gov.br" target="_blank" rel="noopener">delegaciaonline.rs.gov.br</a>.
+      O número do BO é o que o banco vai pedir.
+    </li>
+    <li>
+      <strong>Avise seus contatos</strong> se a conta do WhatsApp foi clonada, para
+      que ninguém mais seja enganado no seu nome.
+    </li>
+    <li>
+      <strong>Registre a reclamação</strong> em
+      <a href="https://www.consumidor.gov.br" target="_blank" rel="noopener">consumidor.gov.br</a>
+      ou procure o Procon de Santo Ângelo.
+    </li>
+  </ol>
+
+  <p>
+    E o mais importante: cair em golpe não é burrice. Eles são feitos por
+    profissionais justamente para enganar gente atenta. Contar para alguém da
+    família logo é o que mais ajuda a resolver.
+  </p>
+
+  <footer class="rodape">
+    <p>
+      <strong>Conecta Santo Ângelo</strong> — material produzido para a Atividade
+      Extensionista II: Tecnologia Aplicada à Inclusão Digital, curso Superior de
+      Tecnologia em Análise e Desenvolvimento de Sistemas.
+    </p>
+    <p>Jackson Ramos · Santo Ângelo, RS · 2026 · Pode ser copiado e distribuído livremente.</p>
+  </footer>
+
+</div>
+
+</body>
+</html>
