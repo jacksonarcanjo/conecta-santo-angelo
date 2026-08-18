@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Acesse o portal — Conecta Santo Ângelo</title>
+<meta name="description" content="Aponte a câmera do celular para o QR code e abra o portal Conecta Santo Ângelo.">
+<link rel="icon" href="../assets/icone.svg" type="image/svg+xml">
+<link rel="icon" href="../assets/favicon.png" sizes="32x32">
+<style>
+:root { --bg:#f4f6f8; --text:#14202b; --soft:#4a5b6a; --accent:#0a5c8a; --border:#ccd5de; }
+@media (prefers-color-scheme: dark) {
+  :root { --bg:#10171e; --text:#eef3f7; --soft:#a8b8c6; --accent:#6fb8e0; --border:#35434f; }
+}
+* { box-sizing:border-box; }
+body {
+  margin:0; min-height:100vh; background:var(--bg); color:var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  text-align:center; padding: 2rem 1.5rem 3rem; gap:1.5rem;
+}
+.etiqueta { margin:0; font-size:clamp(.8rem,2vw,.95rem); font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--accent); }
+h1 { margin:0; font-size:clamp(1.8rem,6vw,3.2rem); line-height:1.1; letter-spacing:-.02em; }
+p.instrucao { margin:0; font-size:clamp(1.05rem,2.6vw,1.45rem); color:var(--soft); max-width:30ch; }
+
+.moldura {
+  background:#fff; padding:clamp(1rem,3vw,1.75rem); border-radius:20px;
+  box-shadow:0 4px 24px rgba(20,32,43,.16); line-height:0;
+  width:min(78vw, 62vh, 460px); aspect-ratio:1;
+}
+.moldura svg { display:block; width:100%; height:100%; }
+
+.endereco {
+  font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+  font-size:clamp(.9rem,2.4vw,1.25rem); font-weight:700; color:var(--accent);
+  word-break:break-all; max-width:34ch; line-height:1.4;
+}
+.alternativa { margin:0; font-size:.95rem; color:var(--soft); max-width:34ch; }
+.imprimir {
+  min-height:48px; padding:.65rem 1.3rem; background:var(--accent); color:#fff;
+  border:none; border-radius:10px; font:inherit; font-weight:700; cursor:pointer;
+}
+@media (prefers-color-scheme: dark) { .imprimir { color:#10171e; } }
+.voltar { color:var(--accent); font-weight:600; text-decoration:none; }
+:focus-visible { outline:3px solid #b3540a; outline-offset:3px; }
+
+@media print {
+  @page { size:A4 portrait; margin:16mm; }
+  body { background:#fff; color:#000; min-height:auto; justify-content:flex-start; gap:1.2rem; }
+  .imprimir, .voltar { display:none; }
+  .moldura { box-shadow:none; border:2px solid #000; width:min(70vw,120mm); }
+  .endereco { color:#000; }
+}
+</style>
+</head>
+<body>
+
+  <p class="etiqueta">Conecta Santo Ângelo</p>
+  <h1>Aponte a câmera aqui</h1>
+  <p class="instrucao">Abra a câmera do celular, aponte para o quadrado e toque no aviso que aparecer.</p>
+
+  <div class="moldura">
+<svg viewBox="0 0 45 45" width="100%" height="100%" shape-rendering="crispEdges" role="img" aria-label="QR code do portal" class="segno"><path fill="#fff" d="M0 0h45v45h-45z"/><path class="qrline" stroke="#000" d="M2 2.5h7m1 0h7m5 0h2m1 0h2m1 0h1m7 0h7m-41 1h1m5 0h1m2 0h3m3 0h3m1 0h1m1 0h2m1 0h3m1 0h2m2 0h1m1 0h1m5 0h1m-41 1h1m1 0h3m1 0h1m1 0h2m1 0h1m2 0h1m1 0h1m3 0h1m3 0h2m1 0h1m3 0h1m2 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m2 0h3m2 0h1m4 0h1m1 0h4m3 0h3m1 0h1m1 0h1m1 0h3m1 0h1m-41 1h1m1 0h3m1 0h1m1 0h7m1 0h2m1 0h2m3 0h2m2 0h5m1 0h1m1 0h3m1 0h1m-41 1h1m5 0h1m5 0h2m1 0h1m1 0h2m3 0h3m1 0h1m1 0h3m3 0h1m5 0h1m-41 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-33 1h1m2 0h6m2 0h3m1 0h1m2 0h1m1 0h1m1 0h3m-28 1h2m2 0h1m1 0h1m2 0h1m1 0h1m4 0h3m1 0h3m1 0h1m1 0h1m2 0h1m1 0h1m1 0h1m1 0h1m-41 1h1m2 0h1m3 0h5m4 0h1m3 0h3m2 0h3m2 0h2m3 0h2m-36 1h1m1 0h1m2 0h1m3 0h2m1 0h1m5 0h1m1 0h9m2 0h1m1 0h2m-35 1h2m1 0h2m1 0h2m3 0h2m1 0h1m1 0h2m1 0h1m4 0h3m3 0h2m1 0h1m1 0h2m-38 1h2m1 0h2m1 0h3m6 0h3m3 0h7m4 0h1m1 0h2m4 0h1m-40 1h1m1 0h1m5 0h3m1 0h1m5 0h2m4 0h2m3 0h3m1 0h3m3 0h1m-41 1h1m2 0h1m2 0h3m1 0h4m1 0h2m7 0h1m2 0h2m4 0h1m1 0h3m-38 1h2m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m2 0h3m2 0h2m2 0h3m2 0h1m1 0h1m2 0h1m2 0h3m-39 1h1m1 0h3m1 0h3m1 0h1m2 0h2m5 0h3m2 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m-39 1h1m1 0h1m2 0h1m2 0h1m2 0h3m1 0h3m3 0h14m1 0h1m1 0h1m-40 1h2m2 0h2m2 0h1m1 0h3m2 0h2m2 0h2m3 0h3m3 0h1m3 0h2m1 0h1m1 0h1m-41 1h2m1 0h2m2 0h1m2 0h5m1 0h1m1 0h2m1 0h1m1 0h1m1 0h3m4 0h1m1 0h1m1 0h2m2 0h1m-38 1h5m1 0h2m1 0h1m1 0h3m2 0h2m2 0h3m1 0h2m1 0h1m7 0h1m1 0h1m-41 1h1m2 0h2m5 0h1m3 0h2m1 0h3m1 0h1m1 0h1m3 0h1m2 0h3m2 0h3m-36 1h2m2 0h1m2 0h1m3 0h1m3 0h1m1 0h3m2 0h4m2 0h1m1 0h1m1 0h5m-39 1h2m1 0h1m3 0h2m1 0h1m1 0h3m1 0h1m1 0h1m1 0h3m2 0h1m5 0h4m1 0h1m3 0h1m-41 1h1m4 0h2m1 0h1m4 0h2m1 0h4m3 0h2m7 0h1m1 0h2m1 0h1m2 0h1m-41 1h4m3 0h1m1 0h3m3 0h1m1 0h2m2 0h1m1 0h2m2 0h5m2 0h4m1 0h2m-41 1h1m1 0h1m1 0h1m1 0h4m1 0h1m1 0h4m2 0h2m1 0h3m2 0h2m1 0h1m1 0h1m2 0h1m-36 1h1m1 0h2m3 0h1m3 0h2m3 0h1m1 0h1m1 0h4m2 0h3m2 0h1m1 0h1m1 0h1m1 0h2m-37 1h1m1 0h1m1 0h5m3 0h1m2 0h1m1 0h2m2 0h1m2 0h1m2 0h1m1 0h1m5 0h2m1 0h1m-41 1h1m1 0h2m1 0h1m8 0h1m1 0h3m2 0h2m3 0h1m1 0h1m2 0h2m1 0h3m3 0h1m-41 1h3m1 0h4m2 0h1m2 0h1m1 0h6m1 0h1m1 0h1m3 0h4m1 0h1m3 0h1m1 0h2m-41 1h1m1 0h4m1 0h2m1 0h1m3 0h1m3 0h2m3 0h3m1 0h2m3 0h1m1 0h1m1 0h2m2 0h1m-41 1h1m1 0h2m1 0h3m1 0h1m8 0h4m2 0h2m2 0h3m1 0h5m1 0h2m-32 1h2m3 0h1m1 0h1m1 0h1m2 0h3m1 0h2m1 0h1m2 0h1m1 0h1m3 0h2m-38 1h7m3 0h3m1 0h2m1 0h1m3 0h1m4 0h3m1 0h3m1 0h1m1 0h3m-39 1h1m5 0h1m1 0h1m2 0h2m2 0h1m1 0h1m4 0h1m1 0h1m1 0h1m1 0h1m1 0h3m3 0h1m2 0h2m-41 1h1m1 0h3m1 0h1m2 0h1m3 0h3m2 0h1m2 0h3m1 0h2m1 0h10m-38 1h1m1 0h3m1 0h1m3 0h1m1 0h2m2 0h1m5 0h1m3 0h3m1 0h1m1 0h1m2 0h1m1 0h4m-41 1h1m1 0h3m1 0h1m2 0h3m1 0h1m2 0h2m1 0h1m1 0h1m1 0h1m3 0h1m1 0h9m1 0h1m-40 1h1m5 0h1m2 0h1m1 0h2m1 0h1m1 0h5m4 0h2m9 0h3m1 0h1m-41 1h7m3 0h1m2 0h2m1 0h2m2 0h2m3 0h3m1 0h1m1 0h1m1 0h4m1 0h1"/></svg>
+  </div>
+
+  <p class="alternativa">Se preferir, digite no navegador:</p>
+  <div class="endereco">jacksonarcanjo.github.io/conecta-santo-angelo</div>
+
+  <button type="button" class="imprimir" onclick="window.print()">🖨️ Imprimir como cartaz</button>
+  <a class="voltar" href="../">← Voltar ao portal</a>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Conecta Santo Ângelo">
+  <rect width="512" height="512" rx="110" fill="#0a5c8a"/>
+  <g fill="none" stroke="#ffffff" stroke-width="32" stroke-linecap="round">
+    <path d="M100.4 223.4 A220 220 0 0 1 411.6 223.4"/>
+    <path d="M147.1 270.1 A154 154 0 0 1 364.9 270.1"/>
+    <path d="M194.5 317.5 A87 87 0 0 1 317.5 317.5"/>
+  </g>
+  <circle cx="256" cy="379" r="28" fill="#ffffff"/>
+</svg>

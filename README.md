@@ -46,14 +46,22 @@ participante depois, junto com uma cartilha impressa de navegação segura.
 
 ```
 .
-├── index.html                       Portal principal (4 categorias)
-├── assets/style.css                 Estilos do portal
+├── index.html                       Portal principal (5 seções)
+├── manifest.webmanifest             Permite salvar como atalho na tela inicial
+├── assets/
+│   ├── style.css                    Estilos do portal
+│   ├── icone.svg                    Ícone do atalho e favicon
+│   └── icone-{180,192,512}.png      Ícones para Android e iOS
+├── qr/index.html                    QR code em tela cheia, também imprimível
 ├── cartilha/index.html              Cartilha de navegação segura (imprimível, A4)
 ├── slides/index.html                Slides da oficina (10 slides, navegação por teclado)
 └── materiais/
     ├── lista-presenca.html          Lista de presença para assinatura (imprimível)
     └── declaracao-espaco.html       Declaração de realização (imprimível)
 ```
+
+O QR code é gerado a partir do endereço publicado e embutido como SVG no próprio
+HTML — a página não depende de nenhum serviço externo para funcionar.
 
 ## Conteúdo do portal
 
@@ -64,6 +72,8 @@ participante depois, junto com uma cartilha impressa de navegação segura.
 **🧠 Exercitar a mente** — Duolingo, Racha Cuca, Lumosity
 
 **🛡️ Navegar com segurança** — cinco regras rápidas + cartilha completa
+
+**📌 Guarde no seu celular** — como salvar na tela inicial (Android e iPhone) + QR code
 
 ---
 

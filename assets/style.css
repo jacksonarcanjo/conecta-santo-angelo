@@ -237,6 +237,14 @@ body {
   flex-grow: 1;
 }
 
+.cartao ol {
+  margin: 0 0 1rem;
+  padding-left: 1.35rem;
+  color: var(--text-soft);
+}
+.cartao ol li { margin-bottom: 0.5rem; }
+.cartao ol + p { flex-grow: 1; font-size: 0.95rem; }
+
 .cartao .botao {
   display: inline-flex;
   align-items: center;
