@@ -162,6 +162,33 @@ body {
 
 .indice .emoji { font-size: 1.5rem; line-height: 1; }
 
+/* ---------- Destaque dos guias ---------- */
+
+.destaque {
+  background: var(--accent);
+  color: #fff;
+  border-radius: var(--radius);
+  padding: 1.75rem 1.6rem;
+  margin-bottom: 3.5rem;
+  box-shadow: var(--shadow);
+}
+@media (prefers-color-scheme: dark) {
+  .destaque { background: var(--accent-soft); color: var(--text); border: 2px solid var(--accent); }
+}
+.destaque h2 { margin: 0 0 .5rem; font-size: clamp(1.3rem, 3.2vw, 1.7rem); line-height: 1.2; }
+.destaque p { margin: 0 0 1.35rem; max-width: 52ch; opacity: .95; }
+.destaque .botao {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  min-height: 54px; padding: .75rem 1.5rem;
+  background: #fff; color: var(--accent);
+  font-weight: 800; font-size: 1.08rem; text-decoration: none; border-radius: 10px;
+}
+.destaque .botao::after { content: "→"; }
+.destaque .botao:hover { filter: brightness(.94); }
+@media (prefers-color-scheme: dark) {
+  .destaque .botao { background: var(--accent); color: #10171e; }
+}
+
 /* ---------- Seções ---------- */
 
 .categoria { margin-bottom: 3.5rem; scroll-margin-top: 1rem; }

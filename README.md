@@ -28,6 +28,16 @@ que agrupa os serviços por **necessidade do dia a dia** em vez de por categoria
 técnica. Ele é usado ao vivo durante a oficina e fica salvo no celular do
 participante depois, junto com uma cartilha impressa de navegação segura.
 
+O centro do projeto são os **guias passo a passo**. Saber que o Gov.br existe não
+resolve o problema de quem nunca usou um site do governo — o que trava é a tela
+seguinte. Por isso cada guia percorre o caminho inteiro: o que tocar, o que vai
+aparecer na tela e, principalmente, **o que fazer quando dá errado**, que é o
+ponto onde a pessoa desiste.
+
+As imagens dos guias são capturas reais do percurso, feitas no celular durante a
+preparação do material. Onde um print ainda não existe, a página mostra uma
+marcação dizendo qual arquivo falta, em vez de quebrar.
+
 ### Decisões de projeto
 
 | Decisão | Motivo |
@@ -52,6 +62,12 @@ participante depois, junto com uma cartilha impressa de navegação segura.
 │   ├── style.css                    Estilos do portal
 │   ├── icone.svg                    Ícone do atalho e favicon
 │   └── icone-{180,192,512}.png      Ícones para Android e iOS
+├── guias/                           Guias passo a passo (o núcleo do projeto)
+│   ├── index.html                   Índice dos guias
+│   ├── conta-gov-br.html            Criar a conta Gov.br — 6 passos
+│   ├── carteira-vacinacao.html      Carteira de vacinação no Meu SUS — 4 passos
+│   ├── consultar-cpf.html           Situação do CPF na Receita — 4 passos
+│   └── telas/LEIA-ME.md             Quais prints capturar e como
 ├── qr/index.html                    QR code em tela cheia, também imprimível
 ├── cartilha/index.html              Cartilha de navegação segura (imprimível, A4)
 ├── slides/index.html                Slides da oficina (10 slides, navegação por teclado)
