@@ -37,12 +37,12 @@ para um repositório público no GitHub.
 |---|---|
 | `gov-01-inicial.png` | Página inicial do gov.br, mostrando o botão **Entrar** no topo |
 | `gov-02-entrar.png` | A tela azul “Identifique-se no gov.br”, pedindo o CPF |
-| `gov-03-cpf.png` | O campo de CPF preenchido, com o botão **Continuar** visível |
-| `gov-04-termos.png` | A tela do termo de uso, com as caixas “Li e estou de acordo” e “Sou humano” |
-| `gov-05-validacao.png` | A tela com as opções de confirmar identidade (banco, perguntas, facial) |
-| `gov-06-ativacao.png` | A tela pedindo o código enviado por e-mail ou SMS (**não mostre o código**) |
-| `gov-07-senha.png` | A tela de criação de senha (deixe os campos **vazios**) |
-| `gov-08-duas-etapas.png` | A tela de segurança, onde se ativa a verificação em duas etapas |
+
+**Só essas duas.** Do passo 3 em diante, as telas só existem para quem está
+criando uma conta nova — quem já tem conta não consegue reproduzir o fluxo. Em
+vez de print, o guia aponta para o
+[tutorial oficial em PDF](https://www.gov.br/servicoscompartilhados/pt-br/servicos/catalogo-de-servicos/tutorial-como-criar-conta-no-govbr.pdf),
+que já traz todas essas telas.
 
 ## Guia 2 — Ver sua carteira de vacinação
 
