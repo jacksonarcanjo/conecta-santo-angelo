@@ -57,8 +57,8 @@ para um repositório público no GitHub.
 
 | Arquivo | O que capturar |
 |---|---|
-| `cpf-01-inicial.png` | Página da Receita Federal, mostrando onde se busca o serviço |
-| `cpf-02-formulario.png` | O formulário com CPF, data de nascimento e a verificação |
+| `cpf-01-formulario.png` | O formulário de consulta em branco (link direto no guia) |
+| `cpf-02-verificacao.png` | Os campos preenchidos com a caixa de verificação visível |
 | `cpf-03-resultado.png` | A tela de resultado com a situação cadastral (**tape nome e CPF**) |
 
 ---
